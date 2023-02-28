@@ -4,15 +4,15 @@ namespace DealershipTracker.Models
   public class Car
   {
     public string Brand { get; set; }
-    private static List<Item> _instances = new List<Item> { };
+    private static List<Car> _instances = new List<Car> { };
 
-    public Item(string description)
+    public Car(string brand)
     {
-      Description = description;
+      Brand = brand;
       _instances.Add(this);
     }
 
-    public static List<Item> GetAll()
+    public static List<Car> GetAll()
     {
       return _instances;
     }

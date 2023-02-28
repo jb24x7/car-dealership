@@ -10,10 +10,16 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <form action="/updatedindex" method="post">
-      <label for="brand">Add a Car</label>
-      <input id="brand" name="brand" type="text">
-      <button type="submit">Submit</button>
-    </form>
+    @using DealershipTracker.Models;
+
+    <h1>List Of Cars</h1>
+    <ul>
+      @foreach (Car item in Model)
+      {
+        <li>@item.Brand</li>
+      }
+
+    </ul>
+    <a href="/items/new">Add a new Car.</a>
   </body>
 </html>
