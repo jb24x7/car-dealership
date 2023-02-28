@@ -12,7 +12,7 @@
   <body>
     @using DealershipTracker.Models;
 
-    <h1>List Cars</h1>
+    <h1>List Of Cars</h1>
     <ul>
       @foreach (Car item in Model)
       {
@@ -20,6 +20,11 @@
       }
 
     </ul>
-    <a href="/items/new">Add a new Car.</a>
+
+    <a href="/items/new">Add a new car</a>
+    <br>
+    <a href="/items/clear">Clear list of cars</a>
+
   </body>
 </html>
+

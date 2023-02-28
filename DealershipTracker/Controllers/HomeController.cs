@@ -9,9 +9,15 @@ namespace DealershipTracker.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-
       List<Car> allCars = Car.GetAll();
       return View(allCars);
+    }
+    
+    [Route("/updatedindex")]
+    public ActionResult Create(string brand)
+    {
+      Car myCar = new Car(brand);
+      return RedirectToAction("Index");
     }
 
     [Route("/items/new")]
@@ -20,12 +26,14 @@ namespace DealershipTracker.Controllers
       return View();
     }
 
-    [Route("/updatedindex")]
-    public ActionResult Create(string brand)
+    [Route("/items/clear")]
+    public ActionResult ClearAllCars()
     {
-      Car myCar = new Car(brand);
+      Car.ClearAll();
       return RedirectToAction("Index");
     }
+
+
 
   }
 }
